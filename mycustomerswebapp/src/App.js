@@ -78,7 +78,7 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {currentCustomers.map((customer, index) => (
+          {(currentCustomers.length>0)?(currentCustomers.map((customer, index) => (
             <tr key={index}>
               <td>{customer.sno}</td>
               <td>{customer.customer_name}</td>
@@ -88,7 +88,13 @@ function App() {
               <td>{new Date(customer.created_at).toLocaleDateString()}</td>
               <td>{new Date(customer.created_at).toLocaleTimeString()}</td>
             </tr>
-          ))}
+          )) ): (
+            <tr>
+              <td colSpan="7" className="text-center">
+                <p>No customers found.</p>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
       <div className="pagination justify-content-center ">

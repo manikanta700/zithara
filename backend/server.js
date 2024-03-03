@@ -11,7 +11,7 @@ const client = new Client({
     host: 'localhost',
     database: 'postgres',
     password: 'mani@123',
-    port: 5432, // Default PostgreSQL port
+    port: 5432, 
   });
   
 
